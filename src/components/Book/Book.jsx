@@ -1,19 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Book = ({book}) => {
 
-  const {image,bookName, author,tags,category,rating} = book;
+  const {bookId,image,bookName, author,tags,category,rating} = book;
 
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
-  <figure className='border bg-slate-100 rounded-xl mb-5 mt-5 w-11/12 mx-auto' >
-    <img className='h-56 p-5 '
+    <Link to={`books/${bookId}`}>
+    <div className="card bg-base-100 w-80 shadow-xl mx-auto">
+  <figure className='border bg-slate-100 rounded-xl mb-3 mt-5 w-11/12 mx-auto' >
+    <img className='h-40 p-3 '
       src={book.image}
       alt="book-image" />
   </figure>
   <div className="card-body">
   <div>
-    {book.tags.map((tag, index) => <span key={index} className='bg-green-300 rounded-2xl px-2 py-1 m-1 '>{tag}</span>)}
+    {book.tags.map((tag, index) => <span key={index} className='bg-green-300 rounded-2xl px-2 py-0.5 m-1 '>{tag}</span>)}
   </div>
     <h2 className="card-title">
     
@@ -29,6 +31,7 @@ const Book = ({book}) => {
     </div>
   </div>
 </div>
+    </Link>
   );
 };
 

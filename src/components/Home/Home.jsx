@@ -6,7 +6,9 @@ const Home = () => {
   return (
     <div >
      <Banner />
-     <Books />
+     <div className='mx-auto justify-center items-center'>
+      <Books />
+     </div>
     </div>
   );
 };
