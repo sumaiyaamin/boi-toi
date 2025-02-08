@@ -5,9 +5,11 @@ import Footer from '../Footer/Footer';
 
 const Routes = () => {
   return (
-    <div>
+    <div className='min-h-screen flex flex-col'>
       <Navbar></Navbar>
-      <Outlet />
+      <div className='flex-1 p-5'>
+        <Outlet></Outlet>
+      </div>
 
       <Footer />
       
