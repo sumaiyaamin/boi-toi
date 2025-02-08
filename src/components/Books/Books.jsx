@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Book from '../Book/Book';
 
 const Books = () => {
 
@@ -17,8 +18,10 @@ const Books = () => {
     <div>
       <h2 className='text-center text-3xl'>Books</h2>
 
-      <h3>{books.length}</h3>
-      
+    <div className='grid grid-cols-3 gap-5'>{
+      books.map( book => <Book book={book} key={book.bookId} ></Book>)
+    }
+    </div>
     </div>
   );
 };
